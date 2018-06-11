@@ -1,0 +1,41 @@
+<ion-content padding class="animated fadeIn login auth-page" color="green">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary">
+        <strong>PapaFilas</strong>
+      </h2>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="contact" item-start class="text-primary"></ion-icon>
+          Matrícula
+        </ion-label>
+        <ion-input class="ion-input" type="text" [(ngModel)]="myMatricula" name="matricula"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          CPF
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+    </form>
+    <div class="spacer" style="height: 30px;"></div>
+
+    <div>
+      <button ion-button icon-start block color="green" tappable (click)="login(matricula)" class="butom_inicia">
+        <ion-icon name="log-in"></ion-icon>
+        Iniciar
+      </button>
+      <div class="spacer" style="height: 60px;"></div>
+    </div>
+
+  </div>
+</ion-content>
