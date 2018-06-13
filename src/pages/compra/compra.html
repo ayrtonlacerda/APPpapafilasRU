@@ -8,53 +8,207 @@
 </ion-header>
 
 <ion-content>
-      <div>
+  <div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="cash" item-start class="text-dark"></ion-icon>
+          Valor
+        </ion-label>
+        <ion-input type="text">
+        </ion-input>
+      </ion-item>
+    </form>
+  </div>
+
+  <div class="spacer" style="height: 30px;"></div>
+  <div>
+    <ion-title>
+      <h2 class="title">
+        Informaçāo do Cartão
+      </h2>
+    </ion-title>
+  </div>
+
+  <div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          Nome do Titular do Cartão
+        </ion-label>
+        <ion-input type="text">
+        </ion-input>
+      </ion-item>
+    </form>
+  </div>
+  <br>
+
+  <b>Selecione a Bandeira:</b>
+  <br>
+  <br>
+  <form>
+      <div class="cc-selector">
+        <input id="visa" type="radio" name="credit-card" value="visa" />
+        <label class="drinkcard-cc visa" for="visa"></label>
+        <input id="mastercard" type="radio" name="credit-card" value="mastercard" />
+        <label class="drinkcard-cc mastercard" for="mastercard"></label>
+        <input id="elo" type="radio" name="credit-card" value="elo">
+          <label class="drinkcard-cc elo"for="elo"></label>
+        <input id="hipercard" type="radio" name="credit-card" value="hipercard" />
+        <label class="drinkcard-cc hipercard" for="hipercard"></label>
+      </div>
+    </form>
+
+  <div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          Número do Cartão
+        </ion-label>
+        <ion-input type="text">
+        </ion-input>
+      </ion-item>
+    </form>
+  </div>
+
+  <div class="grid-basic-page">
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-label>Mês</ion-label>
+          <ion-select [(ngModel)]="month">
+            <ion-option value="01">1</ion-option>
+            <ion-option value="02">2</ion-option>
+            <ion-option value="03">3</ion-option>
+            <ion-option value="04">4</ion-option>
+            <ion-option value="05">5</ion-option>
+            <ion-option value="06">6</ion-option>
+            <ion-option value="07">7</ion-option>
+            <ion-option value="08">8</ion-option>
+            <ion-option value="09">9</ion-option>
+            <ion-option value="10">10</ion-option>
+            <ion-option value="11">11</ion-option>
+            <ion-option value="12" checked="true">12</ion-option>
+          </ion-select>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
           <form class="list-form">
             <ion-item>
               <ion-label floating>
-                <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-                Valor
+                Ano
               </ion-label>
-              <ion-input type="text"  placeholder="R$ 2.50">
+              <ion-input type="text">
               </ion-input>
             </ion-item>
           </form>
-        </div> 
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <form class="list-form">
+            <ion-item>
+              <ion-label floating>
+                CVC
+              </ion-label>
+              <ion-input type="text">
+              </ion-input>
+            </ion-item>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
 
-  <div class="spacer" style="height: 30px;"></div>
-<div>
-  <ion-title>
-    Informaçāo do Cartão
-  </ion-title>
-</div>
+  </div>
 
   <div>
-      <form class="list-form">
-        <ion-item>
-          <ion-label floating>
-            <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-            Nome do Título do Cartão
-          </ion-label>
-          <ion-input type="text"  placeholder="JOAOZINHO V FERREIRA">
-          </ion-input>
-        </ion-item>
-      </form>
-    </div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          CPF do Titular do Cartão
+        </ion-label>
+        <ion-input type="text">
+        </ion-input>
+      </ion-item>
+    </form>
+  </div>
+  <br>
+  <br>
 
-    <div>
-        <form class="list-form">
-          <ion-item>
-            <ion-label floating>
-              <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-              Número do Cartão
-            </ion-label>
-            <ion-input type="text"  placeholder="2200.0000.7621.0000">
-            </ion-input>
-          </ion-item>
-        </form>
-      </div>
-  
-  
+  <b>Telefone/Celular</b>
+
+
+  <div class="grid-basic-page">
+    <ion-row>
+      <ion-col>
+        <div>
+          <form class="list-form">
+            <ion-item>
+              <ion-label floating>
+                DDD
+              </ion-label>
+              <ion-input type="text">
+              </ion-input>
+            </ion-item>
+          </form>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <form class="list-form">
+            <ion-item>
+              <ion-label floating>
+                Número
+              </ion-label>
+              <ion-input type="text">
+              </ion-input>
+            </ion-item>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+  <div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          CEP
+        </ion-label>
+        <ion-input type="text">
+        </ion-input>
+      </ion-item>
+    </form>
+  </div>
+
+
+  <div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          Endereço
+        </ion-label>
+        <ion-input type="text">
+        </ion-input>
+      </ion-item>
+    </form>
+  </div>
+
+  <div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          Número
+        </ion-label>
+        <ion-input type="text">
+        </ion-input>
+      </ion-item>
+    </form>
+  </div>
+
+
 
   <br>
   <div>
