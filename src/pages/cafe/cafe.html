@@ -7,18 +7,17 @@
 
   <ion-toolbar color="green" no-border-top>
     <ion-buttons start>
-      <button ion-button icon-only>
-        <ion-icon name="arrow-back"></ion-icon>
+      <button ion-button icon-only tappable (click)="yesterDay()">
+        <ion-icon name="arrow-back" ></ion-icon>
       </button>
     </ion-buttons>
 
     <ion-title>
     <h1>{{dia_semana}}</h1>
     </ion-title>
-
-
     <ion-buttons end>
-      <button ion-button icon-only>
+
+      <button ion-button icon-only tappable (click)="nextDay()">
         <ion-icon name="arrow-forward"></ion-icon>
       </button>
     </ion-buttons>
@@ -60,6 +59,7 @@
           <h3>{{lista_cardapio.BEBIDAS_Q_VEG_1}}</h3>
         </ion-item>
 
+
         <ion-item>
           <ion-avatar item-start>
             <img src="/assets/img/achocolatado.png">
@@ -100,6 +100,7 @@
           <h3>{{lista_cardapio.PROTEINA_VEG_1}}</h3>
         </ion-item>
 
+
         <ion-item>
           <ion-avatar item-start>
             <img src="/assets/img/prato.png">
@@ -107,6 +108,7 @@
           <h2>Complemento</h2>
           <h3>{{lista_cardapio.COMPLEM}}</h3>
         </ion-item>
+
 
         <ion-item>
           <ion-avatar item-start>
@@ -161,6 +163,7 @@
           <h3>{{lista_cardapio.GUARNICAO_2}}</h3>
         </ion-item>
 
+
         <ion-item>
           <ion-avatar item-start>
             <img src="/assets/img/prato.png">
@@ -168,6 +171,7 @@
           <h2 color="black">Prato Vegetariano</h2>
           <h3>{{lista_cardapio.PRATO_VEG_2}}</h3>
         </ion-item>
+
 
         <ion-item>
           <ion-avatar item-start>
@@ -177,6 +181,7 @@
           <h3>{{lista_cardapio.ACOMPANHAMENTOS_2}}</h3>
         </ion-item>
 
+
         <ion-item>
           <ion-avatar item-start>
             <img src="/assets/img/sobre.png">
@@ -184,6 +189,7 @@
           <h2>Sobremesa</h2>
           <h3>{{lista_cardapio.SOBREMESA_2}}</h3>
         </ion-item>
+
 
         <ion-item>
           <ion-avatar item-start>

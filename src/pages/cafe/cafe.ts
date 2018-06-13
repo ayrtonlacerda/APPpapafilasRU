@@ -8,13 +8,18 @@ import { CardapioPProvider } from '../../providers/cardapio-p/cardapio-p';
   templateUrl: 'cafe.html',
   providers: [
     CardapioPProvider
-  ] 
+  ]
 })
 export class CafePage {
 
   public lista_cardapio = new Array<any>();
   public dia_semana;
   public dia_atual;
+  public currentDate;
+  public counter_day = 0;
+  public yester_day = 0;
+
+
 
   constructor(
     public navCtrl: NavController,
@@ -26,9 +31,28 @@ export class CafePage {
       cardapio: string = "cafe";
       isAndroid: boolean = false;
 
+   private nextDay(){
+     this.counter_day = this.counter_day + 1;
+      console.log(this.counter_day);
+     this.ionViewDidLoad();
+   }
+
+   private yesterDay(){
+     this.counter_day = this.counter_day - 1;
+      console.log(this.counter_day);
+      this.ionViewDidLoad();
+   }
+
+
    FuncaoData(){
 
         var DataAtual = new Date();
+        this.currentDate = DataAtual;
+        //this.currentDate = this.currentDate + 1;
+        console.log("teste data");
+        console.log(this.currentDate);
+
+
         var weekday = new Array(7);
             weekday[0] = "Domingo";
             weekday[1] = "Segunda-Feira";
@@ -38,8 +62,24 @@ export class CafePage {
             weekday[5] = "Sexta-Fera";
             weekday[6] = "Sábado";
 
-        var DiaSemana = weekday[DataAtual.getDay()];
-        var DiaAtual = DataAtual.getDate();
+
+        if(this.counter_day + DataAtual.getDay() > 6){
+          var counter = this.counter_day;
+          counter = counter -7;
+          var DiaSemana = weekday[DataAtual.getDay() + counter];
+          console.log(DiaSemana);
+        }
+        else if(this.counter_day + DataAtual.getDay() < 0){
+          var counter = this.counter_day;
+          counter = counter + 7;
+          var DiaSemana = weekday[DataAtual.getDay() + counter];
+          console.log(DiaSemana);
+        }
+        else{
+          var DiaSemana = weekday[DataAtual.getDay() + this.counter_day];
+          console.log(DiaSemana);
+        }
+        var DiaAtual = DataAtual.getDate() + this.counter_day;
         var MesAtual = DataAtual.getMonth();
         var AnoAtual = DataAtual.getFullYear();
         var MesAtual = MesAtual + 1;
@@ -58,8 +98,10 @@ export class CafePage {
       }
 
     ionViewDidLoad(){
-      this.FuncaoData();
-      console.log('ionViewDidLoad ExtratoPage');
+
+       this.FuncaoData();
+
+      console.log('ionViewDidLoad CAFEPage');
       //console.log(this.dia_atual);
       this.cardapioProvider.getCardapio(this.dia_atual).subscribe
         (
@@ -76,7 +118,7 @@ export class CafePage {
               console.log(objeto_cardapio);
             }
             else if(data.status == 206){
-              console.log("Sem extrato");
+              console.log("Sem cardapio");
               //this.showAlertExtrato();
               //this.navCtrl.push( TabsPage );
             }
@@ -85,8 +127,6 @@ export class CafePage {
             console.log(error);
           }
         )
-
-        this.FuncaoData();
       }
 
 }
