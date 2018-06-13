@@ -8,7 +8,7 @@ import { CardapioPProvider } from '../../providers/cardapio-p/cardapio-p';
   templateUrl: 'cafe.html',
   providers: [
     CardapioPProvider
-  ]
+  ] 
 })
 export class CafePage {
 

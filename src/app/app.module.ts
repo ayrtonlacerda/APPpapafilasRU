@@ -4,13 +4,9 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
 
-import { JantaPageModule } from '../pages/janta/janta.module';
 import { CafePageModule } from '../pages/cafe/cafe.module';
-import { AlmocoPageModule } from '../pages/almoco/almoco.module';
 import { StatusPageModule } from '../pages/status/status.module';
 import { CompraPageModule } from '../pages/compra/compra.module';
 import { ExtratoPageModule } from '../pages/extrato/extrato.module';
@@ -27,17 +23,13 @@ import { ConfigProvider } from '../providers/Config/Config';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
     TabsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    JantaPageModule,
     CafePageModule,
-    AlmocoPageModule,
     StatusPageModule,
     CompraPageModule,
     ExtratoPageModule,
@@ -47,9 +39,7 @@ import { ConfigProvider } from '../providers/Config/Config';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    AboutPage,
-    ContactPage,
+    MyApp,     
     HomePage,
     TabsPage
   ],
