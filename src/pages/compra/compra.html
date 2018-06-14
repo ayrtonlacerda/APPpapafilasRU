@@ -15,8 +15,7 @@
           <ion-icon name="cash" item-start class="text-dark"></ion-icon>
           Valor
         </ion-label>
-        <ion-input type="text">
-        </ion-input>
+        <ion-input type="tel" maxlength="5"></ion-input>
       </ion-item>
     </form>
   </div>
@@ -29,19 +28,6 @@
       </h2>
     </ion-title>
   </div>
-
-  <div>
-    <form class="list-form">
-      <ion-item>
-        <ion-label floating>
-          Nome do Titular do Cartão
-        </ion-label>
-        <ion-input type="text">
-        </ion-input>
-      </ion-item>
-    </form>
-  </div>
-  <br>
 
   <b>Selecione a Bandeira:</b>
   <br>
@@ -63,11 +49,22 @@
     <form class="list-form">
       <ion-item>
         <ion-label floating>
-          Número do Cartão
+          Nome do Titular do Cartão
         </ion-label>
         <ion-input type="text">
         </ion-input>
       </ion-item>
+    </form>
+  </div>
+
+  <div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          Número do Cartão
+        </ion-label>
+        <ion-input type="tel" maxlength="16"></ion-input>   
+         </ion-item>
     </form>
   </div>
 
@@ -99,8 +96,7 @@
               <ion-label floating>
                 Ano
               </ion-label>
-              <ion-input type="text">
-              </ion-input>
+              <ion-input type="tel" maxlength="2"></ion-input>
             </ion-item>
           </form>
         </div>
@@ -112,8 +108,7 @@
               <ion-label floating>
                 CVC
               </ion-label>
-              <ion-input type="text">
-              </ion-input>
+              <ion-input type="tel" maxlength="3"></ion-input>
             </ion-item>
           </form>
         </div>
@@ -128,8 +123,7 @@
         <ion-label floating>
           CPF do Titular do Cartão
         </ion-label>
-        <ion-input type="text">
-        </ion-input>
+        <ion-input type="tel" maxlength="11"></ion-input>
       </ion-item>
     </form>
   </div>
@@ -148,8 +142,7 @@
               <ion-label floating>
                 DDD
               </ion-label>
-              <ion-input type="text">
-              </ion-input>
+              <ion-input type="tel" maxlength="2"></ion-input>
             </ion-item>
           </form>
         </div>
@@ -161,8 +154,7 @@
               <ion-label floating>
                 Número
               </ion-label>
-              <ion-input type="text">
-              </ion-input>
+              <ion-input type="tel" maxlength="9"></ion-input>
             </ion-item>
           </form>
         </div>
@@ -177,8 +169,7 @@
         <ion-label floating>
           CEP
         </ion-label>
-        <ion-input type="text">
-        </ion-input>
+        <ion-input type="tel" maxlength="8"></ion-input>
       </ion-item>
     </form>
   </div>

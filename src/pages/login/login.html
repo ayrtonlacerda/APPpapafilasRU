@@ -16,7 +16,7 @@
           <ion-icon name="contact" item-start class="text-primary"></ion-icon>
           Matrícula
         </ion-label>
-        <ion-input class="ion-input" type="text" [(ngModel)]="myMatricula" name="matricula"></ion-input>
+        <ion-input class="ion-input"  type="tel" maxlength="9" [(ngModel)]="myMatricula" name="matricula"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -24,7 +24,7 @@
           <ion-icon name="lock" item-start class="text-primary"></ion-icon>
           CPF
         </ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input  type="tel" maxlength="11"></ion-input>
       </ion-item>
     </form>
     <div class="spacer" style="height: 30px;"></div>
