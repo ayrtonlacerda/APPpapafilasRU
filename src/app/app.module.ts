@@ -19,6 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginProvider } from '../providers/login/login';
 import { ExtratoPProvider } from '../providers/extrato-p/extrato-p';
 import { ConfigProvider } from '../providers/Config/Config';
+import { PagamentoPProvider } from '../providers/pagamento-p/pagamento-p';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ConfigProvider } from '../providers/Config/Config';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     LoginProvider,
     ExtratoPProvider,
-    ConfigProvider
+    ConfigProvider,
+    PagamentoPProvider
   ]
 })
 export class AppModule { }
