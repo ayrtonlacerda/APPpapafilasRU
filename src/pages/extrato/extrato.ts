@@ -40,10 +40,6 @@ export class ExtratoPage {
     this.extratoProvider.getHistorico(this.matriculaExt).subscribe
       (
       data => {
-        //const response = (data as any);
-        // const objeto_extrato = JSON.parse(response._body);
-        // this.lista_extrato = objeto_extrato;
-        //console.log(objeto_extrato);
         if (data.status == 200) {
           console.log("tem extrato");
           const response = (data as any);
@@ -56,8 +52,6 @@ export class ExtratoPage {
           this.showAlertExtrato();
           this.navCtrl.push(TabsPage);
         }
-
-
       },
       error => {
         console.log(error);

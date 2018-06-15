@@ -1,18 +1,51 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { StatusPProvider } from '../../providers/status-p/status-p';
 @IonicPage()
 @Component({
   selector: 'page-status',
   templateUrl: 'status.html',
+  providers:[
+    StatusPProvider
+  ]
 })
 export class StatusPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  public lista_status = new Array<any>();
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public statusProvider: StatusPProvider,
+    public alertCtrl: AlertController
+  ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad StatusPage');
+
+    this.statusProvider.getStatus().subscribe
+    (
+      data => {
+
+        if (data.status == 200) {
+          console.log("tem status");
+          const response = (data as any);
+          const objeto_status = JSON.parse(response._body);
+          this.lista_status = objeto_status;
+          console.log(objeto_status);
+        }
+        else if (data.status == 206) {
+          console.log("Sem status");
+          this.showAlertExtrato();
+          this.navCtrl.push(TabsPage);
+        }
+
+
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
   public time1: number = 10;
