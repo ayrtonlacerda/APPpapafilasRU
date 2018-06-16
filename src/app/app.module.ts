@@ -51,6 +51,7 @@ import { PagamentoPProvider } from '../providers/pagamento-p/pagamento-p';
     LoginProvider,
     ExtratoPProvider,
     ConfigProvider,
+    PagamentoPProvider,
     PagamentoPProvider
   ]
 })

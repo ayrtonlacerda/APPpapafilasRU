@@ -1,9 +1,3 @@
-<!--
-  Generated template for the CompraPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar color="green">
     <ion-title>
@@ -11,105 +5,192 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<!--
-<script type="text/javascript">
-  PagSeguroDirectPayment.setSessionId(this.id);
- </script>
- -->
+
 <ion-content>
-	<div>
-	<form class="list-form">
-    	<ion-item>
-       	<ion-label floating>
-       	<ion-icon name="cash" item-start class="text-dark"></ion-icon>
-          	Valor
-       	</ion-label>
-       	<ion-input type="text" [(ngModel)]="myValue" name="valor" ></ion-input>
-      	</ion-item>
-  </form>
-  <form class="list-form">
-    <ion-item>
-       <ion-label floating>
-       <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-          CPF
-       </ion-label>
-       <ion-input type="text" [(ngModel)]="myCpf" name="cpf" (ionFocus)="geraHash()" ></ion-input>
-      </ion-item>
-</form>
-<form class="list-form">
-  <ion-item>
-     <ion-label floating>
-     <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-        Número do cartão
-     </ion-label>
-     <ion-input type="text" [(ngModel)]="myNumCar" name="ncartao" ></ion-input>
-    </ion-item>
-</form>
-<form class="list-form">
-  <ion-item>
-     <ion-label floating>
-     <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-        Bandeira
-     </ion-label>
-     <ion-input type="text" [(ngModel)]="myBrand" name="brand" ></ion-input>
-    </ion-item>
-</form>
-<form class="list-form">
-  <ion-item>
-     <ion-label floating>
-     <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-        Mês validade
-     </ion-label>
-     <ion-input type="text" [(ngModel)]="myMonVal" name="mes" ></ion-input>
-    </ion-item>
-</form>
-<form class="list-form">
-  <ion-item>
-     <ion-label floating>
-     <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-        Ano validade
-     </ion-label>
-     <ion-input type="text" [(ngModel)]="myYeaVal" name="ano" ></ion-input>
-    </ion-item>
-</form>
-<form class="list-form">
-  <ion-item>
-     <ion-label floating>
-     <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-        CVV
-     </ion-label>
-     <ion-input type="text" [(ngModel)]="myCod" name="code" ></ion-input>
-    </ion-item>
-</form>
-<form class="list-form">
-  <ion-item>
-     <ion-label floating>
-     <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-        CEP
-     </ion-label>
-     <ion-input type="text" [(ngModel)]="myCep" name="cep" (ionFocus)="geraHashCartao()" ></ion-input>
-    </ion-item>
-</form>
-<form class="list-form">
-  <ion-item>
-     <ion-label floating>
-     <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-        Endereço
-     </ion-label>
-     <ion-input type="text" [(ngModel)]="myEnd" name="end" ></ion-input>
-    </ion-item>
-</form>
-<form class="list-form">
-  <ion-item>
-     <ion-label floating>
-     <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-        Número
-     </ion-label>
-     <ion-input type="text" [(ngModel)]="myNum" name="num" ></ion-input>
-    </ion-item>
-</form>
-	</div>
   <div>
-    <button ion-button block class="button_compra" tappable (click)="geraHash()">Comprar</button>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="cash" item-start class="text-dark"></ion-icon>
+          Valor
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="myCompra" name="compra"></ion-input>
+      </ion-item>
+    </form>
   </div>
+
+  <div class="spacer" style="height: 30px;"></div>
+
+  <div>
+    <ion-title>
+      <h2 class="title">
+        Informaçāo do Cartão
+      </h2>
+    </ion-title>
+  </div>
+
+  <div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          Nome do Titular do Cartão
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="myNameCard" name="namecard" (ionFocus)="geraHashIdHistorico()"></ion-input>
+      </ion-item>
+    </form>
+  </div>
+  <br>
+
+  <b>Selecione a Bandeira:</b>
+  <br>
+  <br>
+  <form>
+      <div class="cc-selector">
+        <input id="visa" type="radio" [(ngModel)]="myCardBrand" name="credit-card" value="visa" />
+        <label class="drinkcard-cc visa" for="visa"></label>
+        <input id="mastercard" type="radio" [(ngModel)]="myCardBrand" name="credit-card" value="mastercard" />
+        <label class="drinkcard-cc mastercard" for="mastercard"></label>
+        <input id="elo" type="radio" [(ngModel)]="myCardBrand" name="credit-card" value="elo">
+          <label class="drinkcard-cc elo"for="elo"></label>
+        <input id="hipercard" type="radio" [(ngModel)]="myCardBrand" name="credit-card" value="hipercard" />
+        <label class="drinkcard-cc hipercard" for="hipercard"></label>
+      </div>
+  </form>
+
+  <div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          Número do Cartão
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="myCardNumber" name="cardnumber" maxlength="16"></ion-input>
+      </ion-item>
+    </form>
+  </div>
+
+  <div class="grid-basic-page">
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-label>Mês</ion-label>
+          <ion-select [(ngModel)]="myMonth" name="month">
+            <ion-option value="01">1</ion-option>
+            <ion-option value="02">2</ion-option>
+            <ion-option value="03">3</ion-option>
+            <ion-option value="04">4</ion-option>
+            <ion-option value="05">5</ion-option>
+            <ion-option value="06">6</ion-option>
+            <ion-option value="07">7</ion-option>
+            <ion-option value="08">8</ion-option>
+            <ion-option value="09">9</ion-option>
+            <ion-option value="10">10</ion-option>
+            <ion-option value="11">11</ion-option>
+            <ion-option value="12" checked="true">12</ion-option>
+          </ion-select>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <form class="list-form">
+            <ion-item>
+              <ion-label floating>
+                Ano
+              </ion-label>
+              <ion-input type="text" [(ngModel)]="myYear" name="year">
+              </ion-input>
+            </ion-item>
+          </form>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <form class="list-form">
+            <ion-item>
+              <ion-label floating>
+                CVC
+              </ion-label>
+              <ion-input type="text" [(ngModel)]="myCvv" name="cvv">
+              </ion-input>
+            </ion-item>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          CPF do Titular do Cartão
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="myOwnerCpf" name="ownercpf" (ionFocus)="geraHash()">
+        </ion-input>
+      </ion-item>
+    </form>
+  </div>
+  <br>
+  <br>
+
+  <b>Telefone/Celular</b>
+
+  <div class="grid-basic-page">
+    <ion-row>
+      <ion-col>
+        <div>
+          <form class="list-form">
+            <ion-item>
+              <ion-label floating>
+                DDD
+              </ion-label>
+              <ion-input type="text" [(ngModel)]="myDdd" name="ddd" (ionFocus)="geraHashCartao()">
+              </ion-input>
+            </ion-item>
+          </form>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <form class="list-form">
+            <ion-item>
+              <ion-label floating>
+                Número
+              </ion-label>
+              <ion-input type="text" [(ngModel)]="myTelefone" name="telefone" >
+              </ion-input>
+            </ion-item>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+  <div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          CEP
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="myCep" name="cep">
+        </ion-input>
+      </ion-item>
+    </form>
+  </div>
+  <div>
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          Número da casa
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="myNumero" name="numero" (ionFocus)="geraCepLocation()" >
+        </ion-input>
+      </ion-item>
+    </form>
+  </div>
+  <br>
+  <div>
+    <button ion-button block class="button_compra" (click)="geraAcabou()">Comprar</button>
+  </div>
+
 </ion-content>
