@@ -20,6 +20,7 @@ import { LoginProvider } from '../providers/login/login';
 import { ExtratoPProvider } from '../providers/extrato-p/extrato-p';
 import { ConfigProvider } from '../providers/Config/Config';
 import { PagamentoPProvider } from '../providers/pagamento-p/pagamento-p';
+import { StatusPProvider } from '../providers/status-p/status-p';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,11 @@ import { PagamentoPProvider } from '../providers/pagamento-p/pagamento-p';
     ExtratoPProvider,
     ConfigProvider,
     PagamentoPProvider,
+<<<<<<< HEAD
     PagamentoPProvider
+=======
+    StatusPProvider
+>>>>>>> 5c3b8f7fdb763e50ed4ab2aefe2d122cce6ca51e
   ]
 })
 export class AppModule { }
