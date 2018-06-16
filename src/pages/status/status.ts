@@ -35,9 +35,7 @@ export class StatusPage {
           console.log(objeto_status);
         }
         else if (data.status == 206) {
-          console.log("Sem status");
-          this.showAlertExtrato();
-          this.navCtrl.push(TabsPage);
+
         }
 
 

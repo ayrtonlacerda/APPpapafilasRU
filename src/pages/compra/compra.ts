@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { PagamentoPProvider } from '../../providers/pagamento-p/pagamento-p';
 import '../../assets/scriptpagseguro.js';
 
+declare var PagSeguroDirectPayment:any;
+
 @IonicPage()
 @Component({
   selector: 'page-compra',

@@ -1,6 +1,8 @@
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import '../../assets/scriptpagseguro';
+import '../../assets/scriptpagseguro.js';
+
+declare var PagSeguroDirectPayment:any;
 
 @Injectable()
 export class PagamentoPProvider {

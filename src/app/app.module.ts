@@ -53,11 +53,8 @@ import { StatusPProvider } from '../providers/status-p/status-p';
     ExtratoPProvider,
     ConfigProvider,
     PagamentoPProvider,
-<<<<<<< HEAD
-    PagamentoPProvider
-=======
     StatusPProvider
->>>>>>> 5c3b8f7fdb763e50ed4ab2aefe2d122cce6ca51e
+
   ]
 })
 export class AppModule { }
