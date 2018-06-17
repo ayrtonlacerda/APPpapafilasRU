@@ -63,7 +63,7 @@
         <ion-label floating>
           Número do Cartão
         </ion-label>
-        <ion-input type="number" [(ngModel)]="myCardNumber" name="cardnumber" maxlength="16"></ion-input>
+        <ion-input type="tel"  maxlength="16" [(ngModel)]="myCardNumber" name="cardnumber" ></ion-input>
       </ion-item>
     </form>
   </div>
@@ -96,7 +96,7 @@
               <ion-label floating>
                 Ano
               </ion-label>
-              <ion-input type="text" [(ngModel)]="myYear" name="year">
+              <ion-input type="number" [(ngModel)]="myYear" name="year">
               </ion-input>
             </ion-item>
           </form>
@@ -109,7 +109,7 @@
               <ion-label floating>
                 CVC
               </ion-label>
-              <ion-input type="text" [(ngModel)]="myCvv" name="cvv">
+              <ion-input type="number" [(ngModel)]="myCvv" name="cvv">
               </ion-input>
             </ion-item>
           </form>
@@ -124,7 +124,7 @@
         <ion-label floating>
           CPF do Titular do Cartão
         </ion-label>
-        <ion-input type="text" [(ngModel)]="myOwnerCpf" name="ownercpf" (ionFocus)="geraHash()">
+        <ion-input type="number" [(ngModel)]="myOwnerCpf" name="ownercpf" (ionFocus)="geraHash()">
         </ion-input>
       </ion-item>
     </form>
@@ -143,7 +143,7 @@
               <ion-label floating>
                 DDD
               </ion-label>
-              <ion-input type="text" [(ngModel)]="myDdd" name="ddd" (ionFocus)="geraHashCartao()">
+              <ion-input type="number" [(ngModel)]="myDdd" name="ddd" (ionFocus)="geraHashCartao()">
               </ion-input>
             </ion-item>
           </form>
@@ -156,7 +156,7 @@
               <ion-label floating>
                 Número
               </ion-label>
-              <ion-input type="text" [(ngModel)]="myTelefone" name="telefone" >
+              <ion-input type="number" [(ngModel)]="myTelefone" name="telefone" >
               </ion-input>
             </ion-item>
           </form>
@@ -172,7 +172,7 @@
         <ion-label floating>
           CEP
         </ion-label>
-        <ion-input type="text" [(ngModel)]="myCep" name="cep">
+        <ion-input type="number" [(ngModel)]="myCep" name="cep">
         </ion-input>
       </ion-item>
     </form>
@@ -183,7 +183,7 @@
         <ion-label floating>
           Número da casa
         </ion-label>
-        <ion-input type="text" [(ngModel)]="myNumero" name="numero" (ionFocus)="geraCepLocation()" >
+        <ion-input type="number" [(ngModel)]="myNumero" name="numero" (ionFocus)="geraCepLocation()" >
         </ion-input>
       </ion-item>
     </form>
