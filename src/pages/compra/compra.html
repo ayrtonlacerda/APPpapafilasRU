@@ -7,69 +7,57 @@
 </ion-header>
 
 <ion-content>
-  <div>
-    <form class="list-form">
-      <ion-item>
-        <ion-label floating>
-          <ion-icon name="cash" item-start class="text-dark"></ion-icon>
-          Valor
-        </ion-label>
-        <ion-input type="text" [(ngModel)]="myCompra" name="compra"></ion-input>
-      </ion-item>
-    </form>
-  </div>
 
-  <div class="spacer" style="height: 30px;"></div>
+  <form class="list-form">
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="cash" item-start class="text-dark"></ion-icon>
+        Valor
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="myCompra" name="compra"></ion-input>
+    </ion-item>
 
-  <div>
+    <div class="spacer" style="height: 30px;"></div>
+
     <ion-title>
       <h2 class="title">
         Informaçāo do Cartão
       </h2>
     </ion-title>
-  </div>
 
-  <div>
-    <form class="list-form">
-      <ion-item>
-        <ion-label floating>
-          Nome do Titular do Cartão
-        </ion-label>
-        <ion-input type="text" [(ngModel)]="myNameCard" name="namecard" (ionFocus)="geraHashIdHistorico()"></ion-input>
-      </ion-item>
-    </form>
-  </div>
-  <br>
 
-  <b>Selecione a Bandeira:</b>
-  <br>
-  <br>
-  <form>
-      <div class="cc-selector">
-        <input id="visa" type="radio" [(ngModel)]="myCardBrand" name="credit-card" value="visa" />
-        <label class="drinkcard-cc visa" for="visa"></label>
-        <input id="mastercard" type="radio" [(ngModel)]="myCardBrand" name="credit-card" value="mastercard" />
-        <label class="drinkcard-cc mastercard" for="mastercard"></label>
-        <input id="elo" type="radio" [(ngModel)]="myCardBrand" name="credit-card" value="elo">
-          <label class="drinkcard-cc elo"for="elo"></label>
-        <input id="hipercard" type="radio" [(ngModel)]="myCardBrand" name="credit-card" value="hipercard" />
-        <label class="drinkcard-cc hipercard" for="hipercard"></label>
-      </div>
-  </form>
+    <ion-item>
+      <ion-label floating>
+        Nome do Titular do Cartão
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="myNameCard" name="namecard" (ionFocus)="geraHashIdHistorico()"></ion-input>
+    </ion-item>
 
-  <div>
-    <form class="list-form">
-      <ion-item>
-        <ion-label floating>
-          Número do Cartão
-        </ion-label>
-        <ion-input type="tel"  maxlength="16" [(ngModel)]="myCardNumber" name="cardnumber" ></ion-input>
-      </ion-item>
-    </form>
-  </div>
+    <br>
 
-  <div class="grid-basic-page">
-    <ion-row>
+    <b>Selecione a Bandeira:</b>
+    <br>
+    <br>
+    <div class="cc-selector">
+      <input id="visa" type="radio" [(ngModel)]="myCardBrand" name="credit-card" value="visa" />
+      <label class="drinkcard-cc visa" for="visa"></label>
+      <input id="mastercard" type="radio" [(ngModel)]="myCardBrand" name="credit-card" value="mastercard" />
+      <label class="drinkcard-cc mastercard" for="mastercard"></label>
+      <input id="elo" type="radio" [(ngModel)]="myCardBrand" name="credit-card" value="elo">
+      <label class="drinkcard-cc elo" for="elo"></label>
+      <input id="hipercard" type="radio" [(ngModel)]="myCardBrand" name="credit-card" value="hipercard" />
+      <label class="drinkcard-cc hipercard" for="hipercard"></label>
+    </div>
+
+
+    <ion-item>
+      <ion-label floating>
+        Número do Cartão
+      </ion-label>
+      <ion-input type="tel" maxlength="16" [(ngModel)]="myCardNumber" name="cardnumber"></ion-input>
+    </ion-item>
+
+    <ion-row class="grid-basic-page">
       <ion-col>
         <div>
           <ion-label>Mês</ion-label>
@@ -90,104 +78,69 @@
         </div>
       </ion-col>
       <ion-col>
-        <div>
-          <form class="list-form">
-            <ion-item>
+            <ion-item class="list-form">
               <ion-label floating>
                 Ano
               </ion-label>
-              <ion-input type="number" [(ngModel)]="myYear" name="year">
-              </ion-input>
+              <ion-input type="number" [(ngModel)]="myYear" name="year"></ion-input>
             </ion-item>
-          </form>
-        </div>
       </ion-col>
       <ion-col>
-        <div>
-          <form class="list-form">
-            <ion-item>
+            <ion-item class="list-form">
               <ion-label floating>
-                CVC
+                CVV
               </ion-label>
-              <ion-input type="number" [(ngModel)]="myCvv" name="cvv">
-              </ion-input>
+              <ion-input type="number" [(ngModel)]="myCvv" name="cvv"></ion-input>
             </ion-item>
-          </form>
-        </div>
-      </ion-col>
-    </ion-row>
-  </div>
-
-  <div>
-    <form class="list-form">
-      <ion-item>
-        <ion-label floating>
-          CPF do Titular do Cartão
-        </ion-label>
-        <ion-input type="number" [(ngModel)]="myOwnerCpf" name="ownercpf" (ionFocus)="geraHash()">
-        </ion-input>
-      </ion-item>
-    </form>
-  </div>
-  <br>
-  <br>
-
-  <b>Telefone/Celular</b>
-
-  <div class="grid-basic-page">
-    <ion-row>
-      <ion-col>
-        <div>
-          <form class="list-form">
-            <ion-item>
-              <ion-label floating>
-                DDD
-              </ion-label>
-              <ion-input type="number" [(ngModel)]="myDdd" name="ddd" (ionFocus)="geraHashCartao()">
-              </ion-input>
-            </ion-item>
-          </form>
-        </div>
-      </ion-col>
-      <ion-col>
-        <div>
-          <form class="list-form">
-            <ion-item>
-              <ion-label floating>
-                Número
-              </ion-label>
-              <ion-input type="number" [(ngModel)]="myTelefone" name="telefone" >
-              </ion-input>
-            </ion-item>
-          </form>
-        </div>
       </ion-col>
     </ion-row>
 
-  </div>
+    <ion-item>
+      <ion-label floating>
+        CPF do Titular do Cartão
+      </ion-label>
+      <ion-input type="number" [(ngModel)]="myOwnerCpf" name="ownercpf" (ionFocus)="geraHash()"></ion-input>
+    </ion-item>
+    <br>
+    <br>
 
-  <div>
-    <form class="list-form">
-      <ion-item>
-        <ion-label floating>
-          CEP
-        </ion-label>
-        <ion-input type="number" [(ngModel)]="myCep" name="cep">
-        </ion-input>
-      </ion-item>
-    </form>
-  </div>
-  <div>
-    <form class="list-form">
-      <ion-item>
-        <ion-label floating>
-          Número da casa
-        </ion-label>
-        <ion-input type="number" [(ngModel)]="myNumero" name="numero" (ionFocus)="geraCepLocation()" >
-        </ion-input>
-      </ion-item>
-    </form>
-  </div>
+    <b>Telefone/Celular</b>
+
+    <ion-row class="grid-basic-page">
+      <ion-col>
+        <ion-item class="list-form">
+          <ion-label floating>
+            DDD
+          </ion-label>
+          <ion-input type="number" [(ngModel)]="myDdd" name="ddd" (ionFocus)="geraHashCartao()"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item class="list-form">
+          <ion-label floating>
+            Número
+          </ion-label>
+          <ion-input type="number" [(ngModel)]="myTelefone" name="telefone"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-item class="list-form">
+      <ion-label floating>
+        CEP
+      </ion-label>
+      <ion-input type="number" [(ngModel)]="myCep" name="cep"></ion-input>
+    </ion-item>
+
+    <ion-item class="list-form">
+      <ion-label floating>
+        Número da casa
+      </ion-label>
+      <ion-input type="number" [(ngModel)]="myNumero" name="numero" (ionFocus)="geraCepLocation()"></ion-input>
+    </ion-item>
+
+
+  </form>
   <br>
   <div>
     <button ion-button block class="button_compra" (click)="geraAcabou()">Comprar</button>
