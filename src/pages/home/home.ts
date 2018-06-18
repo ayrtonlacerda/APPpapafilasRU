@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, App } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { CompraPage } from '../compra/compra';
 import { ExtratoPage } from '../extrato/extrato';
 import { LoginPage } from '../login/login';
-import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-home',
@@ -15,9 +14,9 @@ export class HomePage {
   public mySaldo = localStorage.getItem("saldo");
   //public mySaldo = localStorage.getItem("saldo");
 
-  constructor(public navCtrl: NavController,
-              public app: App
-             ) {}
+  constructor(public navCtrl: NavController) {
+
+  }
   // login and go to home page
   docompra() {
     this.navCtrl.push(CompraPage);
@@ -28,8 +27,7 @@ export class HomePage {
   }
 
   dosair() {
-    const root = this.app.getRootNav();
-    root.popToRoot();
+    this.navCtrl.push(LoginPage);
   }
 
 }

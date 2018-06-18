@@ -35,8 +35,10 @@ export class StatusPage {
           console.log(objeto_status);
         }
         else if (data.status == 206) {
-          console.log("Sem status");
+
         }
+
+
       },
       error => {
         console.log(error);
