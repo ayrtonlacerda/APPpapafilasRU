@@ -14,10 +14,10 @@ declare var PagSeguroDirectPayment:any;
     PagamentoPProvider
   ]
 })
-export class CompraPage 
+export class CompraPage
 {
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     public pagamentoProvider: PagamentoPProvider,
     public alertCtrl: AlertController,
@@ -58,7 +58,7 @@ export class CompraPage
     "EMAIL":this.myEmail,
     "ID_GRUPO":this.myGroup,
     "ID_STATUS":this.myStatus,
-    "SALDO":this.myCompra 
+    "SALDO":this.myCompra
   }
   public idHistorico;
   public myNumero;
@@ -68,22 +68,46 @@ export class CompraPage
   public enviaHashCartao;
   //let self: any = this;
 
-  showAlert() 
+  showAlert()
   {
     let alert = this.alertCtrl.create({
       title: 'Falha de conexão!',
       subTitle: 'Não foi possivel realizar a conexão com o servidor. Tente novamente mais tarde.',
       buttons: ['OK']
     });
+
     alert.present();
-  }  
+  }
+
+       },
+       error=>
+       {
+          this.showAlert();
+       }
+      )
+    }
+  */
+   /* geraHash2()
+    {
+      this.pagamentoProvider.testandoessaporra().subscribe
+      (
+       data=>
+       {
+        console.log(data);
+       },
+       error=>
+       {
+          this.showAlert();
+       }
+      )
+    }*/
 
   geraHash()
   {
       this.hashUsuario = PagSeguroDirectPayment.getSenderHash();
       console.log(this.hashUsuario);
   }
-    
+
   geraHashCartao()
     {
       PagSeguroDirectPayment.createCardToken({
@@ -103,8 +127,9 @@ export class CompraPage
         {
           console.log(response);
         },
-    }); 
-  }    
+
+    });
+  }
 
   geraHashIdHistorico()
   {
@@ -204,7 +229,10 @@ export class CompraPage
         console.log("deu meeeeerda");
       }
   }
-  ionViewDidLoad() 
+
+
+  ionViewDidLoad()
+
   {
     this.pagamentoProvider.getHash2().subscribe
     (
@@ -220,15 +248,15 @@ export class CompraPage
       console.log(data);*/
       //console.log(this.objetoIdHistorico);
       const response = (data as any);
-      //const objeto_retorno = JSON.parse(response._body); 
+      //const objeto_retorno = JSON.parse(response._body);
       const objeto_retorno_teste = response._body;
       console.log(objeto_retorno_teste);
       this.id = objeto_retorno_teste;
       PagSeguroDirectPayment.setSessionId(this.id);
-    }); 
+    });
      error=>
      {
         this.showAlert();
-     }    
+     }
   }
 }
