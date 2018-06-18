@@ -48,8 +48,6 @@ export class LoginPage {
 
 
   login() {
-    console.log(this.myMatricula);
-    console.log(this.myCpf);
     this.loginProvider.getMatricula(this.myMatricula).subscribe
       (
 
@@ -59,7 +57,6 @@ export class LoginPage {
         const objeto_retorno = JSON.parse(response._body);
         console.log(objeto_retorno);
         if (data.status == 200) {
-          console.log("Entrou no if");
 			
 		  this.idUser = objeto_retorno.ID_USUARIO;
           this.nomeUsuario = objeto_retorno.NOME_USUARIO;
