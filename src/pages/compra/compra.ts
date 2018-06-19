@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { PagamentoPProvider } from '../../providers/pagamento-p/pagamento-p';
 import '../../assets/scriptpagseguro.js';
+import { HomePage } from '../home/home';
 
 declare var PagSeguroDirectPayment:any;
 
@@ -73,6 +74,36 @@ export class CompraPage
     let alert = this.alertCtrl.create({
       title: 'Falha de conexão!',
       subTitle: 'Não foi possivel realizar a conexão com o servidor. Tente novamente mais tarde.',
+      buttons: ['OK']
+    });
+    alert.present();
+  }  
+
+  showAlert1() 
+  {
+    let alert = this.alertCtrl.create({
+      title: 'Obrigado por comprar conosco!',
+      subTitle: 'Sua refeição foi comprado e seu saldo já foi atualizado',
+      buttons: ['OK']
+    });
+    alert.present();
+  }  
+
+  showAlert2() 
+  {
+    let alert = this.alertCtrl.create({
+      title: 'Obrigado por comprar conosco!',
+      subTitle: 'Sua compra está sendo efetuada.',
+      buttons: ['OK']
+    });
+    alert.present();
+  }  
+
+  showAlert3() 
+  {
+    let alert = this.alertCtrl.create({
+      title: 'Deu merda!',
+      subTitle: 'Se fudeu e não conseguiu comprar, otário!',
       buttons: ['OK']
     });
     alert.present();
@@ -198,6 +229,22 @@ export class CompraPage
       data=>
       {
         console.log(data);
+        const response = (data as any);
+        const objeto_retorno5 = JSON.parse(response._body);
+        if(objeto_retorno5.STATUS_COMPRA == 1)
+        {
+          this.showAlert1();
+          this.navCtrl.push(HomePage);
+        }
+        if(objeto_retorno5.STATUS_COMPRA == 2)
+        {
+          this.showAlert2();
+          this.navCtrl.push(HomePage);
+        }
+        if(objeto_retorno5.STATUS_COMPRA == 3)
+        {
+          this.showAlert3();
+        }
       });
       error=>
       {

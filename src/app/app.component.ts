@@ -39,13 +39,13 @@ export class MyApp {
                   } else{
                         this.rootPage = LoginPage;
                         let ConfigLogin = ConfigLoginProvider.getConfigLoginData();
-                  if(ConfigLogin == null){
+                 /*  if(ConfigLogin == null){
                       this.rootPage = LoginPage;
                       ConfigLoginProvider.setConfigLoginData(false);    
                   } 
                   else{
                        this.rootPage = TabsPage;
-                  }                 
+                  }            */      
                       }
                      
                  /* let ConfigLogin = ConfigLoginProvider.getConfigLoginData();
@@ -59,7 +59,6 @@ export class MyApp {
                   
                   
                   console.log(config); 
-                  console.log(ConfigLogin);
 
                   statusBar.styleDefault();
                   splashScreen.hide();
