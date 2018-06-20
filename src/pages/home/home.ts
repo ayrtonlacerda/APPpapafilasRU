@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, App } from 'ionic-angular';
 import { CompraPage } from '../compra/compra';
 import { ExtratoPage } from '../extrato/extrato';
 import { LoginPage } from '../login/login';
 import { LoginProvider } from '../../providers/login/login';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-home',
@@ -24,9 +25,9 @@ export class HomePage {
   public mySaldo;
 
   constructor(public navCtrl: NavController,
-  public loginProvider: LoginProvider) {
-
-  }
+              public loginProvider: LoginProvider,
+              public app: App
+             ) {}
   // login and go to home page
   docompra() {
     this.navCtrl.push(CompraPage);
@@ -37,16 +38,18 @@ export class HomePage {
   }
 
   dosair() {
-    this.navCtrl.push(LoginPage);
+    const root = this.app.getRootNav();
+    root.popToRoot();
+
   }
-  
+
   ionViewWillEnter()
   {
     //console.log("teste");
     //console.log(this.myMatricula);
     this.loginProvider.getMatricula(this.myMatricula).subscribe
     (
-      data => 
+      data =>
         {
           const response = (data as any);
           const objeto_retorno10 = JSON.parse(response._body);
@@ -56,7 +59,7 @@ export class HomePage {
           //this.pegasaldo = localStorage.setItem("saldin",this.mySaldo2);
           //this.mySaldo = objeto_retorno10.SALDO;
         },
-      error => 
+      error =>
         {
           console.log(error);
         }
@@ -65,7 +68,7 @@ export class HomePage {
    console.log(this.mySaldo);
   }
 
-refreshPage() 
+refreshPage()
 {
   this.ionViewWillEnter();
 }
