@@ -38,7 +38,7 @@ export class HomePage {
   }
 
   dosair() {
-    const root = this.app.getRootNav(LoginPage);
+    const root = this.app.getRootNav();
     root.popToRoot();
     localStorage.removeItem("matricula");
 
@@ -46,7 +46,6 @@ export class HomePage {
 
   ionViewWillEnter()
   {
-    //var flag = 0;
     //console.log("teste");
     //console.log(this.myMatricula);
     this.loginProvider.getMatricula(this.myMatricula).subscribe
