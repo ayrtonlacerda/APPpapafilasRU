@@ -46,6 +46,19 @@ export class LoginPage {
     alert.present();
   }
 
+  ionViewDidLoad() {
+    var user  = localStorage.getItem('matricula');
+    console.log("teste login")
+    console.log(user);
+
+    if(user !== "undefinid" && user !== "null"){
+      this.navCtrl.push(TabsPage);
+    }
+    else{
+      return;
+    }
+  }
+
 
   login() {
     this.loginProvider.getMatricula(this.myMatricula).subscribe
@@ -57,7 +70,7 @@ export class LoginPage {
         const objeto_retorno = JSON.parse(response._body);
         console.log(objeto_retorno);
         if (data.status == 200) {
-			
+
 		  this.idUser = objeto_retorno.ID_USUARIO;
           this.nomeUsuario = objeto_retorno.NOME_USUARIO;
           this.saldoUsuario = objeto_retorno.SALDO;
@@ -75,7 +88,7 @@ export class LoginPage {
 		  localStorage.setItem("email", this.myEmail);
 		  localStorage.setItem("grupo", this.myGroup);
 		  localStorage.setItem("status", this.myStatus);
-		  
+
           this.navCtrl.push(TabsPage);
           /*if(this.myCpf == this.comparaCPF)
             this.navCtrl.push( TabsPage );

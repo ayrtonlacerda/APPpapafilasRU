@@ -38,13 +38,15 @@ export class HomePage {
   }
 
   dosair() {
-    const root = this.app.getRootNav();
+    const root = this.app.getRootNav(LoginPage);
     root.popToRoot();
+    localStorage.removeItem("matricula");
 
   }
 
   ionViewWillEnter()
   {
+    //var flag = 0;
     //console.log("teste");
     //console.log(this.myMatricula);
     this.loginProvider.getMatricula(this.myMatricula).subscribe
@@ -64,6 +66,7 @@ export class HomePage {
           console.log(error);
         }
     )
+
    this.mySaldo = this.mySaldo2;
    console.log(this.mySaldo);
   }

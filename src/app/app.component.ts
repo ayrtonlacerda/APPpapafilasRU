@@ -8,13 +8,11 @@ import { StartPage } from '../pages/start/start';
 import { LoginPage } from '../pages/login/login';
 import { ConfigProvider } from '../providers/Config/Config';
 import { HomePage } from '../pages/home/home';
-import { ConfigLoginProvider } from '../providers/ConfigLogin/ConfigLogin';
 
 @Component({
   templateUrl: 'app.html',
   providers: [
-    ConfigProvider,
-    ConfigLoginProvider
+    ConfigProvider
   ]
 })
 export class MyApp {
@@ -24,8 +22,7 @@ export class MyApp {
               platformLogin: Platform,
               statusBar: StatusBar,
               splashScreen: SplashScreen,
-              configProvider: ConfigProvider,
-              ConfigLoginProvider: ConfigLoginProvider
+              configProvider: ConfigProvider
              ){
                 platform.ready().then(() => {
                   // Okay, so the platform is ready and our plugins are available.
@@ -36,29 +33,12 @@ export class MyApp {
                       this.rootPage = StartPage;
                       configProvider.setConfigData(false);
 
-                  } else{
-                        this.rootPage = LoginPage;
-                        let ConfigLogin = ConfigLoginProvider.getConfigLoginData();
-                 /*  if(ConfigLogin == null){
-                      this.rootPage = LoginPage;
-                      ConfigLoginProvider.setConfigLoginData(false);    
-                  } 
+                  }
                   else{
-                       this.rootPage = TabsPage;
-                  }            */      
+                        this.rootPage = LoginPage;                      
                       }
-                     
-                 /* let ConfigLogin = ConfigLoginProvider.getConfigLoginData();
-                  if(ConfigLogin == null){
-                      this.rootPage = LoginPage;
-                      ConfigLoginProvider.setConfigLoginData(false);    
-                  } 
-                  else{
-                       this.rootPage = TabsPage;
-                  }*/
-                  
-                  
-                  console.log(config); 
+
+                  console.log(config);
 
                   statusBar.styleDefault();
                   splashScreen.hide();
