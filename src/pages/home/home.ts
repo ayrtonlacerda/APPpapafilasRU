@@ -38,7 +38,7 @@ export class HomePage {
   }
 
   dosair() {
-    const root = this.app.getRootNav(LoginPage);
+    const root = this.app.getRootNav();
     root.popToRoot();
     localStorage.removeItem("matricula");
 
