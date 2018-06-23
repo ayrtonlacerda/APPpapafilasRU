@@ -48,14 +48,18 @@ export class LoginPage {
 
   ionViewDidLoad() {
     var user  = localStorage.getItem('matricula');
+    var compara = null;
     console.log("teste login")
     console.log(user);
 
-    if(user !== "undefinid" && user !== "null"){
+    //&& user !== "undefinid"
+    if(user !== compara){
+      console.log("entrei if login");
       this.navCtrl.push(TabsPage);
     }
     else{
-      return;
+      console.log("entrei else login");
+      return; 
     }
   }
 

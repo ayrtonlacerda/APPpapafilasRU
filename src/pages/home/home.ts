@@ -70,8 +70,8 @@ export class HomePage {
    console.log(this.mySaldo);
   }
 
-refreshPage()
-{
-  this.ionViewWillEnter();
-}
+  refreshPage()
+  {
+    this.ionViewWillEnter();
+  }
 }

@@ -16,6 +16,7 @@ export class ExtratoPage {
 
   public matriculaExt = localStorage.getItem("matricula");
   public lista_extrato = new Array<any>();
+  public status;
 
   constructor(
     public navCtrl: NavController,
@@ -46,6 +47,9 @@ export class ExtratoPage {
           const objeto_extrato = JSON.parse(response._body);
           this.lista_extrato = objeto_extrato;
           console.log(objeto_extrato);
+
+
+
         }
         else if (data.status == 206) {
           console.log("Sem extrato");
