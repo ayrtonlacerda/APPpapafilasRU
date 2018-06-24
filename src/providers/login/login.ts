@@ -8,6 +8,7 @@ import 'rxjs/add/operator/map';
 export class LoginProvider {
 
   private baseApiPathUsuarios = 'http://35.199.101.182/api/usuarios/';
+  private baseApiPath = 'https://dandico.com.br/api/historico/';
 
   constructor(public http: Http) {
     console.log('Hello LoginProvider Provider');
@@ -16,6 +17,11 @@ export class LoginProvider {
   getMatricula(matricula){
     return this.http.get(this.baseApiPathUsuarios + matricula);
   }
+
+  getHistorico(matricula){
+    return this.http.get(this.baseApiPath+matricula+"/last");
+  }
+
 }
 //170042500
 //"https://www.globo.com/"

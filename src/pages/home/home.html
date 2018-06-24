@@ -22,8 +22,11 @@
     </ion-card-header>
     <ion-card-content>
       Seu saldo atual é de <strong> {{mySaldo}} reais </strong>
+      <button ion-button medium icon-only color ="black"  clear round  icon-start tappable (click)="lastTransition()">
+        <ion-icon name="information-circle"></ion-icon>
+        </button>
+      <button ion-button icon-start block color="green" large (click)="refreshPage()">Atualizar página</button>
     </ion-card-content>
-    <button (click)="refreshPage()">Clique aqui e confira seu saldo</button>
   </ion-card>
 <br>
   <div>

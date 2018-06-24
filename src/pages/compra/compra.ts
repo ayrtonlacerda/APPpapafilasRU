@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { PagamentoPProvider } from '../../providers/pagamento-p/pagamento-p';
-import '../../assets/scriptpagseguro.js';
+import '../../assets/scriptpagseguro';
 import { HomePage } from '../home/home';
 
 declare var PagSeguroDirectPayment:any;
@@ -22,6 +22,7 @@ export class CompraPage
     public navParams: NavParams,
     public pagamentoProvider: PagamentoPProvider,
     public alertCtrl: AlertController,
+    public loadingCtrl : LoadingController
   ) {}
 
   public idUser = localStorage.getItem("id");
@@ -67,7 +68,48 @@ export class CompraPage
   public qualquercoisa = "";
   public hashUsuario;
   public enviaHashCartao;
-  //let self: any = this;
+  public saldoComparativo = localStorage.getItem("saldo");
+  public saldoComparativoTeste = +this.saldoComparativo;
+  public myCompraTeste;
+  v: any;
+  //public box_price = 0;
+  //public box_price_formatted = "R$10.00";
+
+  presentLoadingDefault() {
+    let loading = this.loadingCtrl.create({
+      content: 'Aguarde um momento...'
+    });
+  
+    loading.present();
+  
+    setTimeout(() => {
+      loading.dismiss();
+    }, 5000);
+  }
+
+  checagem()
+  {
+  this.myCompraTeste = +this.myCompra;
+  if(this.saldoComparativoTeste + this.myCompraTeste >= 100)
+    {
+      this.showAlert4();
+    }
+  }
+
+  cpf_mask(v) 
+  {
+    v = v.replace(/(\d{2})(\d)/, '$1.$2'); //Insert a dot between the third and quarter digit again
+    this.myCompra = v;
+    console.log(this.myCompra); 
+    this.myCompraTeste = +this.myCompra;
+    console.log(this.myCompraTeste);
+    if(this.saldoComparativoTeste + this.myCompraTeste >= 100)
+    {
+      this.showAlert4();
+      this.navCtrl.push(HomePage);
+    }
+    return v;
+  }
 
   showAlert() 
   {
@@ -102,17 +144,36 @@ export class CompraPage
   showAlert3() 
   {
     let alert = this.alertCtrl.create({
-      title: 'Deu merda!',
-      subTitle: 'Se fudeu e não conseguiu comprar, otário!',
+      title: 'Erro no processamento.',
+      subTitle: 'Ocorreu algum erro no processo da compra.',
       buttons: ['OK']
     });
     alert.present();
   }  
 
+  showAlert4() 
+  {
+    let alert = this.alertCtrl.create({
+      title: 'Erro no valor inserido.',
+      subTitle: 'Valores inseridos ultrapassam o limite de R$100!',
+      buttons: ['OK']
+    });
+    alert.present();
+  } 
+
+  showAlert5() 
+  {
+    let alert = this.alertCtrl.create({
+      title: 'Aguarde',
+      subTitle: 'Processando pagamento...',
+    });
+    alert.present();
+  }
+
   geraHash()
   {
-      this.hashUsuario = PagSeguroDirectPayment.getSenderHash();
-      console.log(this.hashUsuario);
+    this.hashUsuario = PagSeguroDirectPayment.getSenderHash();
+    console.log(this.hashUsuario);
   }
     
   geraHashCartao()
@@ -157,6 +218,11 @@ export class CompraPage
         this.idHistorico = objeto_retorno_teste2.ID_HISTORICO;
         console.log(data);
         console.log(this.idHistorico);
+        this.myCompraTeste = +this.myCompra;
+        if(this.saldoComparativoTeste + this.myCompraTeste >= 100)
+        {
+          this.showAlert4();
+        }
       });
       error=>
       {
@@ -166,6 +232,7 @@ export class CompraPage
 
   geraCepLocation()
   {
+    this.geraHashIdHistorico();
     this.pagamentoProvider.getCepLocation({"cep":this.myCep}).subscribe
     (
       data=>
@@ -189,16 +256,10 @@ export class CompraPage
   }
   geraAcabou()
   {
+    this.presentLoadingDefault();
+    //this.showAlert5();
     this.enviaHashCartao = localStorage.getItem("hashcartao");
     console.log(this.enviaHashCartao);
-    /*PagSeguroDirectPayment.onSenderHashReady(function(response){
-      if(response.status == 'error') {
-          console.log(response.message);
-          return false;
-      }
-      console.log(response);
-      var hash = response.senderHash;
-    },*/
     this.pagamentoProvider.getEssaPorra(
       {
         "ID_USUARIO":this.idUser,
@@ -224,7 +285,6 @@ export class CompraPage
         "UF":this.myUF
       }
     ).subscribe
-    //console.log(this.pagamentoProvider.getEssaPorra);
     (
       data=>
       {
@@ -233,12 +293,12 @@ export class CompraPage
         const objeto_retorno5 = JSON.parse(response._body);
         if(objeto_retorno5.STATUS_COMPRA == 1)
         {
-          this.showAlert1();
+          this.showAlert2();
           this.navCtrl.push(HomePage);
         }
         if(objeto_retorno5.STATUS_COMPRA == 2)
         {
-          this.showAlert2();
+          this.showAlert1();
           this.navCtrl.push(HomePage);
         }
         if(objeto_retorno5.STATUS_COMPRA == 3)
@@ -253,6 +313,7 @@ export class CompraPage
   }
   ionViewDidLoad() 
   {
+    //console.log(this.saldoComparativo);
     this.pagamentoProvider.getHash2().subscribe
     (
      data=>
@@ -269,7 +330,12 @@ export class CompraPage
       const response = (data as any);
       //const objeto_retorno = JSON.parse(response._body); 
       const objeto_retorno_teste = response._body;
+      //this.saldoComparativo = objeto_retorno_teste.SALDO;
       console.log(objeto_retorno_teste);
+      //if(this.saldoComparativoTeste + this.myCompra >= 100)
+      //{
+        //this.showAlert4();
+      //}
       this.id = objeto_retorno_teste;
       PagSeguroDirectPayment.setSessionId(this.id);
     }); 
