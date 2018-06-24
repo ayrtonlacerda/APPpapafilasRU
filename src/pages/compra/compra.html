@@ -72,33 +72,21 @@
     <ion-row>
       <ion-col>
         <div>
-          <ion-label>Mês</ion-label>
-          <ion-select [(ngModel)]="myMonth" name="month">
-            <ion-option value="01">1</ion-option>
-            <ion-option value="02">2</ion-option>
-            <ion-option value="03">3</ion-option>
-            <ion-option value="04">4</ion-option>
-            <ion-option value="05">5</ion-option>
-            <ion-option value="06">6</ion-option>
-            <ion-option value="07">7</ion-option>
-            <ion-option value="08">8</ion-option>
-            <ion-option value="09">9</ion-option>
-            <ion-option value="10">10</ion-option>
-            <ion-option value="11">11</ion-option>
-            <ion-option value="12" checked="true">12</ion-option>
-          </ion-select>
+            <ion-item>
+              <ion-label>Mês</ion-label>
+              <ion-datetime displayFormat="MM" [(ngModel)]="myMonth" name="month">
+              </ion-datetime>
+            </ion-item>
         </div>
       </ion-col>
       <ion-col>
         <div>
           <form class="list-form">
-            <ion-item>
-              <ion-label floating>
-                Ano
-              </ion-label>
-              <ion-input type="text" [(ngModel)]="myYear" name="year">
-              </ion-input>
-            </ion-item>
+                <ion-item>
+                    <ion-label>Ano</ion-label>
+                    <ion-datetime displayFormat="YYYY" max="2030"  min="2055" [(ngModel)]="myYear" name="year">
+                    </ion-datetime>
+                  </ion-item>
           </form>
         </div>
       </ion-col>
@@ -109,7 +97,7 @@
               <ion-label floating>
                 CVC
               </ion-label>
-              <ion-input type="text" [(ngModel)]="myCvv" name="cvv">
+              <ion-input type="number" [(ngModel)]="myCvv" name="cvv">
               </ion-input>
             </ion-item>
           </form>
@@ -124,7 +112,7 @@
         <ion-label floating>
           CPF do Titular do Cartão
         </ion-label>
-        <ion-input type="text" [(ngModel)]="myOwnerCpf" name="ownercpf" (ionFocus)="geraHash()">
+        <ion-input type="number" [(ngModel)]="myOwnerCpf" name="ownercpf" (ionFocus)="geraHash()">
         </ion-input>
       </ion-item>
     </form>
@@ -143,7 +131,7 @@
               <ion-label floating>
                 DDD
               </ion-label>
-              <ion-input type="text" [(ngModel)]="myDdd" name="ddd" (ionFocus)="geraHashCartao()">
+              <ion-input type="number" [(ngModel)]="myDdd" name="ddd" (ionFocus)="geraHashCartao()">
               </ion-input>
             </ion-item>
           </form>
@@ -156,7 +144,7 @@
               <ion-label floating>
                 Número
               </ion-label>
-              <ion-input type="text" [(ngModel)]="myTelefone" name="telefone" >
+              <ion-input type="number" [(ngModel)]="myTelefone" name="telefone" >
               </ion-input>
             </ion-item>
           </form>
@@ -172,7 +160,7 @@
         <ion-label floating>
           CEP
         </ion-label>
-        <ion-input type="text" [(ngModel)]="myCep" name="cep">
+        <ion-input type="number" [(ngModel)]="myCep" name="cep">
         </ion-input>
       </ion-item>
     </form>
@@ -183,7 +171,7 @@
         <ion-label floating>
           Número da casa
         </ion-label>
-        <ion-input type="text" [(ngModel)]="myNumero" name="numero" (ionFocus)="geraCepLocation()" >
+        <ion-input type="number" [(ngModel)]="myNumero" name="numero" (ionFocus)="geraCepLocation()" >
         </ion-input>
       </ion-item>
     </form>
