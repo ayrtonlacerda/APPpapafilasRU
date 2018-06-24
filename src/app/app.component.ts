@@ -16,7 +16,7 @@ import { HomePage } from '../pages/home/home';
   ]
 })
 export class MyApp {
-  rootPage:any = StartPage;
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform,
               platformLogin: Platform,
