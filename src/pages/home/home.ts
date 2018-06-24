@@ -124,7 +124,7 @@ export class HomePage {
         this.mySaldo2 = objeto_retorno10.SALDO;
         if(data.status == 200)
         {
-          setInterval(this.refreshPage(),3000);
+          setInterval(this.refreshPage(),1500);
           stop();
         }
         console.log(this.mySaldo2);
