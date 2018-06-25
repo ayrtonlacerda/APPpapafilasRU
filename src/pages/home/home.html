@@ -49,9 +49,8 @@
 <div>
   <ion-slides padding paginationType autoplay="8000" loop spaceBetween="5" slidesPerView="1" style="height: 25vh">
       <ion-slide *ngFor="let topic of allCurrencies" style="border-radius: 10px"
-          [ngStyle]="{'background': 'linear-gradient(283deg, #e1e4ea, '+topic.color+')'}">
-        <hr margin>
-        <span class="white">{{ topic.name }}</span>
+          [ngStyle]="{'background': 'linear-gradient(200deg, #e1e4ea, '+topic.color+')'}">
+		  <img src="{{ topic.image }}" class="slide-image"/>
       </ion-slide>
     </ion-slides>
   </div>
