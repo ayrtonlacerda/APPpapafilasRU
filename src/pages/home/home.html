@@ -1,48 +1,58 @@
 <ion-header>
-  <ion-navbar class="nav_bar" color="green">
-    <ion-title>
-      <span ion-text>Home</span>
-    </ion-title>
-
-    <ion-buttons end>
-      <button ion-button icon-only tappable (click)="dosair()">
-        Sair
-        <ion-icon name="log-out"></ion-icon>
-      </button>
-    </ion-buttons>
-
-  </ion-navbar>
-
-</ion-header>
-
-<ion-content padding>
-  <ion-card>
-    <ion-card-header>
-      Bem vindo <strong> {{myName}} </strong>
-    </ion-card-header>
-    <ion-card-content>
-      Seu saldo atual é de <strong> {{mySaldo}} reais </strong>
-      <button ion-button medium icon-only color ="black"  clear round  icon-start tappable (click)="lastTransition()">
-        <ion-icon name="information-circle"></ion-icon>
+    <ion-navbar class="nav_bar" color="green">
+      <ion-title>
+        <span ion-text>Home</span>
+      </ion-title>
+  
+      <ion-buttons end>
+        <button ion-button icon-only tappable (click)="dosair()">
+          Sair
+          <ion-icon name="log-out"></ion-icon>
         </button>
-<!--       <button ion-button icon-start block color="green" large (click)="refreshPage()">Atualizar página</button> -->
-    </ion-card-content>
-  </ion-card>
-<br>
-  <div>
-    <button ion-button icon-start block color="green" tappable (click)="docompra()" class="buton_home">
-      <ion-icon name="card"></ion-icon>
-      Comprar
-    </button>
+      </ion-buttons>
+  
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-card>
+      <ion-card-header>
+        Bem vindo <strong> {{myName}} </strong>
+      </ion-card-header>
+      <ion-card-content>
+        Seu saldo atual é de <strong> {{mySaldo}} reais </strong>
+        <button ion-button medium icon-only color ="black"  clear round  icon-start tappable (click)="lastTransition()">
+          <ion-icon name="information-circle"></ion-icon>
+          </button>
+  <!--       <button ion-button icon-start block color="green" large (click)="refreshPage()">Atualizar página</button> -->
+      </ion-card-content>
+    </ion-card>
+  <br>
+    <div>
+      <button ion-button icon-start block color="green" tappable (click)="docompra()" class="buton_home">
+        <ion-icon name="card"></ion-icon>
+        Comprar
+      </button>
+  
+      <div class="spacer" style="height: 10px;"></div>
+  
+      <button ion-button icon-start block color="green" tappable (click)="doextrato()" class="buton_home">
+        <ion-icon name="list-box"></ion-icon>
+        Extrato
+      </button>
+  
+      <div class="spacer" style="height: 10px;"></div>  
+  </div>
+  <br> 
 
-    <div class="spacer" style="height: 10px;"></div>
-
-    <button ion-button icon-start block color="green" tappable (click)="doextrato()" class="buton_home">
-      <ion-icon name="list-box"></ion-icon>
-      Extrato
-    </button>
-
-    <div class="spacer" style="height: 10px;"></div>
-
+<div>
+  <ion-slides padding paginationType autoplay="8000" loop spaceBetween="5" slidesPerView="1" style="height: 25vh">
+      <ion-slide *ngFor="let topic of allCurrencies" style="border-radius: 10px"
+          [ngStyle]="{'background': 'linear-gradient(283deg, #e1e4ea, '+topic.color+')'}">
+        <hr margin>
+        <span class="white">{{ topic.name }}</span>
+      </ion-slide>
+    </ion-slides>
   </div>
 </ion-content>
