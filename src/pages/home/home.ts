@@ -67,7 +67,7 @@ export class HomePage {
   
     setTimeout(() => {
       loading.dismiss();
-    }, 3000);
+    }, 2000);
   }
 
   lastTransition()
@@ -140,9 +140,9 @@ export class HomePage {
    console.log(this.mySaldo);
   }
 
-refreshPage() 
+ refreshPage() 
   {
     this.presentLoadingDefault();
     this.ionViewWillEnter();
-  }
+  } 
 }
