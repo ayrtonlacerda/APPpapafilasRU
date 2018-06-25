@@ -92,7 +92,7 @@ export class LoginPage {
 		    localStorage.setItem("email", this.myEmail);
 		  localStorage.setItem("grupo", this.myGroup);
 		  localStorage.setItem("status", this.myStatus);
-        this.navCtrl.push(TabsPage);
+        //this.navCtrl.push(TabsPage);
 
         if(this.myCpf == this.comparaCPF)
            this.navCtrl.push( TabsPage );
