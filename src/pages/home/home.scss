@@ -7,4 +7,13 @@ page-home {
     margin-right: auto;
 }
 
+.selected-topics {
+  overflow: auto;
+  display: flex;
+}
+
+hr {
+  background-color: white !important;
+}
+
 }

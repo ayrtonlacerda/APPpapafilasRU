@@ -33,6 +33,17 @@ export class HomePage {
               public alertCtlr : AlertController
              ) {}
 
+             allCurrencies = [{
+              name: 'Açaí',
+              color: '#500cff'
+            }, {
+              name: 'Academia',
+              color: '#ff0cc6'
+            }, {
+              name: 'Banco',
+              color: '#34ff0c'
+            }];
+
              showAlert() 
              {
                let alert = this.alertCtlr.create({
