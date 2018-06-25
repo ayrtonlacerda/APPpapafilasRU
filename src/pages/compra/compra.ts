@@ -125,7 +125,7 @@ export class CompraPage
   {
     let alert = this.alertCtrl.create({
       title: 'Obrigado por comprar conosco!',
-      subTitle: 'Sua refeição foi comprado e seu saldo já foi atualizado',
+      subTitle: 'Sua compra foi efetuada e seu saldo já foi atualizado',
       buttons: ['OK']
     });
     alert.present();
@@ -135,7 +135,7 @@ export class CompraPage
   {
     let alert = this.alertCtrl.create({
       title: 'Obrigado por comprar conosco!',
-      subTitle: 'Sua compra está sendo efetuada.',
+      subTitle: 'Sua compra está sendo processada.',
       buttons: ['OK']
     });
     alert.present();
@@ -251,7 +251,7 @@ export class CompraPage
       });
       error=>
       {
-        console.log("deu merda");
+        console.log("erro na transação");
       }
   }
   geraAcabou()

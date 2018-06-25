@@ -36,7 +36,9 @@
             <div>{{extrato.VALOR_COMPRA}}</div>
           </ion-col>
           <ion-col>
-            <div> {{extrato.ID_STATUS_PAGAMENTO}} </div>
+            <div *ngIf="extrato.ID_STATUS_PAGAMENTO == 1" >Aguarde</div>
+			<div *ngIf="extrato.ID_STATUS_PAGAMENTO == 2" >ok</div>
+			<div *ngIf="extrato.ID_STATUS_PAGAMENTO == 3" >Cancel.</div>
           </ion-col>
         </ion-row>
       </ion-item>
