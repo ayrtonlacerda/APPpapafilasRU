@@ -48,8 +48,6 @@ export class ExtratoPage {
           this.lista_extrato = objeto_extrato;
           console.log(objeto_extrato);
 
-
-
         }
         else if (data.status == 206) {
           console.log("Sem extrato");

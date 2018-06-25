@@ -24,11 +24,11 @@
           <ion-icon name="lock" item-start class="text-green"></ion-icon>
           CPF
         </ion-label>
-        <ion-input type="number"></ion-input>
+        <ion-input class="ion-input" type="number" [(ngModel)]="myCpf" name="cpf"></ion-input>
       </ion-item>
-	  
+
 	 <div class="spacer" style="height: 10px;"></div>
-	 
+
 	  <div>
 		<button ion-button icon-start block color="green" tappable (click)="login(matricula)" class="butom_inicia">
 			<ion-icon name="log-in"></ion-icon>
