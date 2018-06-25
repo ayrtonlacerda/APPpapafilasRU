@@ -19,6 +19,33 @@ export class CafePage {
   public counter_day = 0;
   public yester_day = 0;
 
+  public BEBIDAS_Q_1 ="nada consta";
+  public BEBIDAS_Q_VEG_1="nada consta";
+  public ACHOCOLATADO_1="nada consta";
+  public PAO_1="nada consta";
+  public PAO_1="nada consta";
+  public PROTEINA_1="nada consta";
+  public PROTEINA_VEG_1="nada consta";
+  public COMPLEMENTO_1="nada consta";
+  public FRUTA_1="nada consta";
+  public SALADA_2="nada consta";
+  public MOLHO_2="nada consta";
+  public PRATO_PRINCIPAL_2="nada consta";
+  public GUARNICAO_2="nada consta";
+  public PRATO_VEG_2="nada consta";
+  public ACOMPANHAMENTOS_2="nada consta";
+  public SOBREMESA_2="nada consta";
+  public REFRESCO_2="nada consta";
+  public SALADA_3="nada consta";
+  public MOLHO_3="nada consta";
+  public SOPA_3="nada consta";
+  public PAO_3="nada consta";
+  public PRATO_PRINCIPAL_3="nada consta";
+  public PRATO_VEG_3="nada consta";
+  public COMPLEMENTOS_3="nada consta";
+  public SOBREMESA_3="nada consta";
+  public REFRESCO_3="nada consta";
+
 
 
   constructor(
@@ -116,37 +143,65 @@ export class CafePage {
               const objeto_cardapio = JSON.parse(response._body);
               this.lista_cardapio = objeto_cardapio;
               console.log(objeto_cardapio);
+
+              this.BEBIDAS_Q_1 = this.lista_cardapio.BEBIDAS_Q_1;
+              this.BEBIDAS_Q_VEG_1 = this.lista_cardapio.BEBIDAS_Q_VEG_1;
+              this.ACHOCOLATADO_1 = this.lista_cardapio.ACHOCOLATADO_1;
+              this.PAO_1 = this.lista_cardapio.PAO_1;
+              this.PAO_1 = this.lista_cardapio.PAO_1;
+              this.PROTEINA_1 = this.lista_cardapio.PROTEINA_1;
+              this.PROTEINA_VEG_1 = this.lista_cardapio.PROTEINA_VEG_1;
+              this.COMPLEMENTO_1 = this.lista_cardapio.COMPLEMENTO_1;
+              this.FRUTA_1 = this.lista_cardapio.FRUTA_1;
+              this.SALADA_2 = this.lista_cardapio.SALADA_2;
+              this.MOLHO_2 = this.lista_cardapio.MOLHO_2;
+              this.PRATO_PRINCIPAL_2 = this.lista_cardapio.PRATO_PRINCIPAL_2;
+              this.GUARNICAO_2 = this.lista_cardapio.GUARNICAO_2;
+              this.PRATO_VEG_2 = this.lista_cardapio.PRATO_VEG_2;
+              this.ACOMPANHAMENTOS_2 = this.lista_cardapio.ACOMPANHAMENTOS_2;
+              this.SOBREMESA_2 = this.lista_cardapio.SOBREMESA_2;
+              this.REFRESCO_2 = this.lista_cardapio.REFRESCO_2;
+              this.SALADA_3 = this.lista_cardapio.SALADA_3;
+              this.MOLHO_3 = this.lista_cardapio.MOLHO_3;
+              this.SOPA_3 = this.lista_cardapio.SOPA_3;
+              this.PAO_3 = this.lista_cardapio.PAO_3;
+              this.PRATO_PRINCIPAL_3 = this.lista_cardapio.PRATO_PRINCIPAL_3;
+              this.PRATO_VEG_3 = this.lista_cardapio.PRATO_VEG_3;
+              this.COMPLEMENTOS_3 = this.lista_cardapio.COMPLEMENTOS_3;
+              this.SOBREMESA_3 = this.lista_cardapio.SOBREMESA_3;
+              this.REFRESCO_3 = this.lista_cardapio.REFRESCO_3;
+
             }
             else if(data.status == 206){
               console.log("Sem cardapio");
               //this.showAlertExtrato();
               //this.navCtrl.push( TabsPage );
-              this.lista_cardapio.BEBIDAS_Q_1 ="nada consta";
-              this.lista_cardapio.BEBIDAS_Q_VEG_1="nada consta";
-              this.lista_cardapio.ACHOCOLATADO_1="nada consta";
-              this.lista_cardapio.PAO_1="nada consta";
-              this.lista_cardapio.PAO_1="nada consta";
-              this.lista_cardapio.PROTEINA_1="nada consta";
-              this.lista_cardapio.PROTEINA_VEG_1="nada consta";
-              this.lista_cardapio.COMPLEMENTO_1="nada consta";
-              this.lista_cardapio.FRUTA_1="nada consta";
-              this.lista_cardapio.SALADA_2="nada consta";
-              this.lista_cardapio.MOLHO_2="nada consta";
-              this.lista_cardapio.PRATO_PRINCIPAL_2="nada consta";
-              this.lista_cardapio.GUARNICAO_2="nada consta";
-              this.lista_cardapio.PRATO_VEG_2="nada consta";
-              this.lista_cardapio.ACOMPANHAMENTOS_2="nada consta";
-              this.lista_cardapio.SOBREMESA_2="nada consta";
-              this.lista_cardapio.REFRESCO_2="nada consta";
-              this.lista_cardapio.SALADA_3="nada consta";
-              this.lista_cardapio.MOLHO_3="nada consta";
-              this.lista_cardapio.SOPA_3="nada consta";
-              this.lista_cardapio.PAO_3="nada consta";
-              this.lista_cardapio.PRATO_PRINCIPAL_3="nada consta";
-              this.lista_cardapio.PRATO_VEG_3="nada consta";
-              this.lista_cardapio.COMPLEMENTOS_3="nada consta";
-              this.lista_cardapio.SOBREMESA_3="nada consta";
-              this.lista_cardapio.REFRESCO_3="nada consta";
+            this.BEBIDAS_Q_1 ="nada consta";
+             this.BEBIDAS_Q_VEG_1="nada consta";
+            this.ACHOCOLATADO_1="nada consta";
+            this.PAO_1="nada consta";
+              this.PAO_1="nada consta";
+          this.PROTEINA_1="nada consta";
+             this.PROTEINA_VEG_1="nada consta";
+         this.COMPLEMENTO_1="nada consta";
+         this.FRUTA_1="nada consta";
+           this.SALADA_2="nada consta";
+         this.MOLHO_2="nada consta";
+               this.PRATO_PRINCIPAL_2="nada consta";
+             this.GUARNICAO_2="nada consta";
+             this.PRATO_VEG_2="nada consta";
+               this.ACOMPANHAMENTOS_2="nada consta";
+               this.SOBREMESA_2="nada consta";
+               this.REFRESCO_2="nada consta";
+               this.SALADA_3="nada consta";
+               this.MOLHO_3="nada consta";
+               this.SOPA_3="nada consta";
+               this.PAO_3="nada consta";
+               this.PRATO_PRINCIPAL_3="nada consta";
+               this.PRATO_VEG_3="nada consta";
+               this.COMPLEMENTOS_3="nada consta";
+               this.SOBREMESA_3="nada consta";
+               this.REFRESCO_3="nada consta";
             }
           },
           error=>{
