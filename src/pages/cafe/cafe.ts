@@ -59,7 +59,7 @@ export class CafePage {
             weekday[2] = "Terça-Feira";
             weekday[3] = "Quarta-Feira";
             weekday[4] = "Quinta-Feira";
-            weekday[5] = "Sexta-Fera";
+            weekday[5] = "Sexta-Feira";
             weekday[6] = "Sábado";
 
 

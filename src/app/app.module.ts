@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 
 import { TabsPage } from '../pages/tabs/tabs';
+import { HomePage } from '../pages/home/home';
 
 import { CafePageModule } from '../pages/cafe/cafe.module';
 import { StatusPageModule } from '../pages/status/status.module';
@@ -12,7 +13,7 @@ import { CompraPageModule } from '../pages/compra/compra.module';
 import { ExtratoPageModule } from '../pages/extrato/extrato.module';
 import { StartPageModule } from '../pages/start/start.module';
 import { LoginPageModule } from '../pages/login/login.module';
-import { HomePage } from '../pages/home/home';
+import { HomePageModule } from '../pages/home/home.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -42,7 +43,7 @@ import { StatusPProvider } from '../providers/status-p/status-p';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,     
-    HomePage,
+   HomePage,
     TabsPage
   ],
   providers: [
