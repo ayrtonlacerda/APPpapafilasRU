@@ -36,15 +36,15 @@ export class HomePage {
              allCurrencies = [{
               name: 'Açaí',
               color: '#26a69a',
-			  image: 'https://www.dandico.com.br/imagens/imagem1.png'
+			  image: 'http://www.dandico.com.br/imagens/imagem1.png'
             }, {
               name: 'Academia',
               color: '#26a69a',
-			  image: 'https://www.dandico.com.br/imagens/imagem2.png'
+			  image: 'http://www.dandico.com.br/imagens/imagem2.png'
             }, {
               name: 'Banco',
               color: '#26a69a',
-			  image: 'https://www.dandico.com.br/imagens/imagem3.png'
+			  image: 'http://www.dandico.com.br/imagens/imagem3.png'
             }];
 
              showAlert()
