@@ -44,14 +44,14 @@ export class HomePage {
               color: '#34ff0c'
             }];
 
-             showAlert() 
+             showAlert()
              {
                let alert = this.alertCtlr.create({
                  title: 'Informação',
                  subTitle: 'Sua compra de '+this.myDataCompra+' no valor de '+this.myValorCompra+' está definida com o status '+this.myTextStatusCompra,
                });
                alert.present();
-             } 
+             }
 
   // login and go to home page
   docompra() {
@@ -73,9 +73,9 @@ export class HomePage {
     let loading = this.loadingCtlr.create({
       content: 'Aguarde um momento...'
     });
-  
+
     loading.present();
-  
+
     setTimeout(() => {
       loading.dismiss();
     }, 2000);
@@ -126,7 +126,7 @@ export class HomePage {
     //setInterval(this.refreshPage(),3000);
     this.loginProvider.getMatricula(this.myMatricula).subscribe
     (
-      data => 
+      data =>
       {
         //console.log(data);
         const response = (data as any);
@@ -142,7 +142,7 @@ export class HomePage {
         //this.pegasaldo = localStorage.setItem("saldin",this.mySaldo2);
         //this.mySaldo = objeto_retorno10.SALDO;
       },
-      error => 
+      error =>
         {
           console.log(error);
       }
@@ -151,9 +151,9 @@ export class HomePage {
    console.log(this.mySaldo);
   }
 
- refreshPage() 
+  refreshPage()
   {
     this.presentLoadingDefault();
     this.ionViewWillEnter();
-  } 
+  }
 }
