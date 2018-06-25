@@ -121,6 +121,32 @@ export class CafePage {
               console.log("Sem cardapio");
               //this.showAlertExtrato();
               //this.navCtrl.push( TabsPage );
+              this.lista_cardapio.BEBIDAS_Q_1 ="nada consta";
+              this.lista_cardapio.BEBIDAS_Q_VEG_1="nada consta";
+              this.lista_cardapio.ACHOCOLATADO_1="nada consta";
+              this.lista_cardapio.PAO_1="nada consta";
+              this.lista_cardapio.PAO_1="nada consta";
+              this.lista_cardapio.PROTEINA_1="nada consta";
+              this.lista_cardapio.PROTEINA_VEG_1="nada consta";
+              this.lista_cardapio.COMPLEMENTO_1="nada consta";
+              this.lista_cardapio.FRUTA_1="nada consta";
+              this.lista_cardapio.SALADA_2="nada consta";
+              this.lista_cardapio.MOLHO_2="nada consta";
+              this.lista_cardapio.PRATO_PRINCIPAL_2="nada consta";
+              this.lista_cardapio.GUARNICAO_2="nada consta";
+              this.lista_cardapio.PRATO_VEG_2="nada consta";
+              this.lista_cardapio.ACOMPANHAMENTOS_2="nada consta";
+              this.lista_cardapio.SOBREMESA_2="nada consta";
+              this.lista_cardapio.REFRESCO_2="nada consta";
+              this.lista_cardapio.SALADA_3="nada consta";
+              this.lista_cardapio.MOLHO_3="nada consta";
+              this.lista_cardapio.SOPA_3="nada consta";
+              this.lista_cardapio.PAO_3="nada consta";
+              this.lista_cardapio.PRATO_PRINCIPAL_3="nada consta";
+              this.lista_cardapio.PRATO_VEG_3="nada consta";
+              this.lista_cardapio.COMPLEMENTOS_3="nada consta";
+              this.lista_cardapio.SOBREMESA_3="nada consta";
+              this.lista_cardapio.REFRESCO_3="nada consta";
             }
           },
           error=>{

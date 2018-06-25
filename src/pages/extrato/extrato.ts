@@ -16,7 +16,6 @@ export class ExtratoPage {
 
   public matriculaExt = localStorage.getItem("matricula");
   public lista_extrato = new Array<any>();
-  public status;
 
   constructor(
     public navCtrl: NavController,
